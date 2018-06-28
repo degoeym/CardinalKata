@@ -1,0 +1,11 @@
+D:\CardinalKata\bin\Debug\netcoreapp2.1\CardinalKata.deps.json
+D:\CardinalKata\bin\Debug\netcoreapp2.1\CardinalKata.runtimeconfig.json
+D:\CardinalKata\bin\Debug\netcoreapp2.1\CardinalKata.runtimeconfig.dev.json
+D:\CardinalKata\bin\Debug\netcoreapp2.1\CardinalKata.dll
+D:\CardinalKata\bin\Debug\netcoreapp2.1\CardinalKata.pdb
+D:\CardinalKata\obj\Debug\netcoreapp2.1\CardinalKata.csprojAssemblyReference.cache
+D:\CardinalKata\obj\Debug\netcoreapp2.1\CardinalKata.csproj.CoreCompileInputs.cache
+D:\CardinalKata\obj\Debug\netcoreapp2.1\CardinalKata.AssemblyInfoInputs.cache
+D:\CardinalKata\obj\Debug\netcoreapp2.1\CardinalKata.AssemblyInfo.cs
+D:\CardinalKata\obj\Debug\netcoreapp2.1\CardinalKata.dll
+D:\CardinalKata\obj\Debug\netcoreapp2.1\CardinalKata.pdb

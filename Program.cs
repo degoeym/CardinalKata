@@ -12,6 +12,7 @@ namespace CardinalKata
         static void Main(string[] args)
         {
             TemperatureSpread();
+            FootballSpread();
         }
 
         private static void TemperatureSpread()
@@ -42,6 +43,34 @@ namespace CardinalKata
             Console.WriteLine(target.Day);
         }
 
+        private static void FootballSpread()
+        {
+            var teams = new List<TeamData>();
+
+            using (var reader = new StreamReader("football.dat")) 
+            {
+                var firstLine = reader.ReadLine(); // Read the first line to remove the column headers
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    if (!string.IsNullOrWhiteSpace(line)) // Just skip empty lines
+                    {
+                        var parts = line.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+                        if (parts[0].Any(char.IsDigit)) // Both files' lines start with a number of some sort, so only target those
+                        {
+                            var team = parts[1];
+                            Int32.TryParse(nonDigits.Replace(parts[6], ""), out int goalsFor);
+                            Int32.TryParse(nonDigits.Replace(parts[8], ""), out int goalsAgainst);
+                            teams.Add(new TeamData(team, goalsFor, goalsAgainst));
+                        }
+                    }
+                }
+            }
+
+            var target = teams.OrderBy(x => x.Spread).FirstOrDefault(); // Order from smallest to larget, take the first.
+            Console.WriteLine(target.Team);
+        }
+
         class TemperatureData
         {
             public string Day { get; set; }
@@ -52,6 +81,19 @@ namespace CardinalKata
             {
                 Day = day;
                 Spread = maxTemp - minTemp;
+            }
+        }
+
+        class TeamData
+        {
+            public string Team { get; set; }
+
+            public int Spread { get; set; }
+
+            public TeamData(string team, int goalsFor, int goalsAgainst)
+            {
+                Team = team;
+                Spread = Math.Abs(goalsFor - goalsAgainst);
             }
         }
     }
